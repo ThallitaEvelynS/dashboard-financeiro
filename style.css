@@ -122,3 +122,9 @@ button[disabled] {
     color: #222222;
     text-decoration: underline;
 }
+
+.erro {
+    color: white;
+    background: red;
+    display: none;
+}

@@ -14,11 +14,14 @@
         </div>
         <div class="email">
             <div><label>E-mail</label></div>
-            <input type="email" id="email" name="email" onchange="validarCampos()" placeholder="Digite seu e-mail"/>
+            <input type="email" id="email" name="email" onchange="alteracaoEmail()" placeholder="Digite seu e-mail"/>
+            <div class="erro" id="erro-email-obrigatorio">E-mail é obrigatório</div>
+            <div class="erro" id="erro-email-invalido">E-mail é inválido</div>
         </div>
         <div class="password">
             <div><label>Senha</label></div>
-            <input type="password" id="password" name="password" onchange="validarCampos()" placeholder="Digite sua senha"/>
+            <input type="password" id="password" name="password" onchange="alteracaoSenha()" placeholder="Digite sua senha"/>
+            <div class="erro" id="erro-senha-obrigatoria">Senha é obrigatório</div>
         </div>
         <div class="recuperar-senha">
             <button type="button" id="recover-password-button" disabled="true" >Recuperar Senha</button>
