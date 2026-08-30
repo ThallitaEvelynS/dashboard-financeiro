@@ -3,10 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Controle Financeiro</title>
     <link rel="stylesheet" href="style.css">
-    <title>Controle Financeiro</title>
 </head>
 <body>
-    
+    <form>
+         <div class="titulo">
+            <h1>Controle Financeiro</h1>
+            <p>Login</p>
+        </div>
+        <div class="email">
+            <div><label>E-mail</label></div>
+            <input type="email" id="email" name="email" onchange="validarCampos()" placeholder="Digite seu e-mail"/>
+        </div>
+        <div class="password">
+            <div><label>Senha</label></div>
+            <input type="password" id="password" name="password" onchange="validarCampos()" placeholder="Digite sua senha"/>
+        </div>
+        <div class="recuperar-senha">
+            <button type="button" id="recover-password-button" disabled="true" >Recuperar Senha</button>
+        </div>
+        <div class="entrar">
+            <button type="button" id="login-button" disabled="true">Entrar</button>
+        </div>
+        <div class="registrar">
+            <button type="button">Registrar</button>
+        </div>
+    </form>
 </body>
+
+<script src="index.js"></script>
+
 </html>

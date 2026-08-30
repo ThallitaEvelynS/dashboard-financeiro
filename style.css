@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+form {
+    width: 100%;
+    max-width: 360px;
+    background-color: #ffffff;
+    padding: 32px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.titulo h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 6px;
+}
+
+.titulo p {
+    font-size: 14px;
+    color: #777777;
+}
+
+.email,
+.password {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #444;
+}
+
+input {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #777777;
+}
+
+input::placeholder {
+    color: #999999;
+}
+
+button {
+    width: 100%;
+    padding: 11px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button[disabled] {
+    opacity: 0.7;
+}
+
+.entrar {
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+.entrar button {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #333333;
+}
+
+.entrar button:hover {
+    background-color: #222222;
+}
+
+.registrar {
+    margin-bottom: 8px;
+}
+
+.registrar button {
+    background-color: #ffffff;
+    color: #444444;
+    border: 1px solid #cccccc;
+}
+
+.registrar button:hover {
+    background-color: #f5f5f5;
+}
+
+.recuperar-senha button {
+    background-color: transparent;
+    color: #666666;
+    border: none;
+    padding: 8px;
+    font-size: 13px;
+}
+
+.recuperar-senha button:hover {
+    color: #222222;
+    text-decoration: underline;
+}
