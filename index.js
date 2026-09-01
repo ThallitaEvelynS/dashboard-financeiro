@@ -9,53 +9,64 @@ function alteracaoSenha() {
 }
 
 function descobreSeEmailValido() {
-    const email = document.getElementById("email").value;
+    const email = form.email().value;
     if (!email) {
         return false;
     }
         return validarEmail(email);
 }
 
+function alternarErrosEmail() {
+    const email = form.email().value;
+    if(!email){
+        form.erroEmailObrigatorio().style.display = "block";
+    } else{
+        form.erroEmailObrigatorio().style.display = "none";
+    }
+
+    if (validarEmail(email)) {
+        form.erroEmailInvalido().style.display = "none";
+    } else {
+        form.erroEmailInvalido().style.display = "block";
+    }
+}
+
 function descobreSeSenhaValida() {
-    const password = document.getElementById("password").value;
+    const password = form.password().value;
     if (!password) {
         return false;
      }
       return true;
  }
 
-function validarEmail(email) {
-    return /\S+@\S+\.\S+/.test(email);
- }
- 
-function alternarErrosEmail() {
-    const email = document.getElementById("email").value;
-    if(!email){
-        document.getElementById("erro-email-obrigatorio").style.display = "block";
-    } else{
-        document.getElementById("erro-email-obrigatorio").style.display = "none";
-    }
-
-    if (validarEmail(email)) {
-        document.getElementById("erro-email-invalido").style.display = "none";
-    } else {
-        document.getElementById("erro-email-invalido").style.display = "block";
-    }
-}
-
 function alternarErrosSenha() {
-    const password = document.getElementById("password").value;
+    const password = form.password().value;
     if (!password) {
-        document.getElementById("erro-senha-obrigatoria").style.display = "block";
+        form.erroSenhaObrigatoria().style.display = "block";
     } else {
-        document.getElementById("erro-senha-obrigatoria").style.display = "none";
+        form.erroSenhaObrigatoria().style.display = "none";
     }
 }
 
 function alternarBotoesDesabilitados(){
     const emailValido = descobreSeEmailValido();
-    document.getElementById('recover-password-button').disabled = !emailValido;
+    form.botaoRecuperarSenha().disabled = !emailValido;
 
     const senhaValida = descobreSeSenhaValida();
-    document.getElementById("login-button").disabled = !emailValido || !senhaValida;
+    form.botaoEntrar().disabled = !emailValido || !senhaValida;
 }
+
+function validarEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
+ }
+ 
+
+const form = {
+    email: () => document.getElementById("email"),
+    password: () => document.getElementById("password"),
+    erroEmailObrigatorio: () => document.getElementById("erro-email-obrigatorio"),
+    erroEmailInvalido: () => document.getElementById("erro-email-invalido"),
+    erroSenhaObrigatoria: () => document.getElementById("erro-senha-obrigatoria"),
+    botaoRecuperarSenha: () => document.getElementById("botao-recuperar-senha"),
+    botaoEntrar: () => document.getElementById("botao-entrar")
+} 
