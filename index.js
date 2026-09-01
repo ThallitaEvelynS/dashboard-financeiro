@@ -18,17 +18,8 @@ function descobreSeEmailValido() {
 
 function alternarErrosEmail() {
     const email = form.email().value;
-    if(!email){
-        form.erroEmailObrigatorio().style.display = "block";
-    } else{
-        form.erroEmailObrigatorio().style.display = "none";
-    }
-
-    if (validarEmail(email)) {
-        form.erroEmailInvalido().style.display = "none";
-    } else {
-        form.erroEmailInvalido().style.display = "block";
-    }
+    form.erroEmailObrigatorio().style.display = email ? "none" : "block";
+    form.erroEmailInvalido().style.display = email ? "none" : "block";
 }
 
 function descobreSeSenhaValida() {
@@ -41,11 +32,7 @@ function descobreSeSenhaValida() {
 
 function alternarErrosSenha() {
     const password = form.password().value;
-    if (!password) {
-        form.erroSenhaObrigatoria().style.display = "block";
-    } else {
-        form.erroSenhaObrigatoria().style.display = "none";
-    }
+    form.erroSenhaObrigatoria().style.display = password ? "none" : "block";
 }
 
 function alternarBotoesDesabilitados(){
@@ -55,11 +42,6 @@ function alternarBotoesDesabilitados(){
     const senhaValida = descobreSeSenhaValida();
     form.botaoEntrar().disabled = !emailValido || !senhaValida;
 }
-
-function validarEmail(email) {
-    return /\S+@\S+\.\S+/.test(email);
- }
- 
 
 const form = {
     email: () => document.getElementById("email"),
