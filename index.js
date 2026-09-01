@@ -52,3 +52,7 @@ const form = {
     botaoRecuperarSenha: () => document.getElementById("botao-recuperar-senha"),
     botaoEntrar: () => document.getElementById("botao-entrar")
 } 
+
+function login() {
+    window.location.href="home.html";
+}
